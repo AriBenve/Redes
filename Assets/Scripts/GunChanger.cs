@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
 
 public class GunChanger : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class GunChanger : MonoBehaviour
 
     private void Start()
     {
+        imageShotgunMode = GameObject.Find("ShotgunIcon").ConvertTo<Image>();
+        tmProShotgunMode = GameObject.Find("ShotgunMode").ConvertTo<TextMeshProUGUI>();
+
         _actualGun = guns[0];
         imageShotgunMode.enabled = false;
         tmProShotgunMode.enabled = false;

@@ -56,6 +56,6 @@ public class MainMenuHandler : MonoBehaviour
     void StartGameAsHost()
     {
         _hostButton.interactable = false;
-        _runnerHandler.HostGame(_sessionNameField.text, "Gameplay");
+        _runnerHandler.HostGame(_sessionNameField.text, "SampleScene");
     }
 }

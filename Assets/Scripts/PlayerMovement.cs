@@ -46,7 +46,7 @@ public class PlayerMovement : NetworkBehaviour
 
     Vector3 _moveDirection;
 
-    NetworkRigidbody3D  _rb;
+    [SerializeField] NetworkRigidbody3D  _rb;
 
     public MovementState state;
 
@@ -61,12 +61,12 @@ public class PlayerMovement : NetworkBehaviour
         _readyToJump = true;
     }
 
-    private void Spawn()
+    /*private void Spawn()
     {
         _rb = GetComponent<NetworkRigidbody3D>();
         _rb.Rigidbody.freezeRotation = true;
         _readyToJump = true;
-    }
+    }*/
 
     public override void FixedUpdateNetwork()
     {
