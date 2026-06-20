@@ -408,7 +408,7 @@ MonoBehaviour:
   _backwardsDashParticleSystem: {fileID: 0}
   _leftDashParticleSystem: {fileID: 0}
   _rightDashParticleSystem: {fileID: 0}
-  useCameraForward: 1
+  useCameraForward: 0
   allowAllDirections: 1
   disableGravity: 0
   resetVel: 1

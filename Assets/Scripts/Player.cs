@@ -79,13 +79,13 @@ public class Player : MonoBehaviour
     public void Death()
     {
         Debug.Log("Me fulminaron wachin que carajo hiciste pedazo de aweonado");
-        if(SceneManager.GetActiveScene().name == "Tutorial")
+        /*if(SceneManager.GetActiveScene().name == "Tutorial")
         {
             SceneManager.LoadScene("Nivel 1 (Re-Design)");
         }
         else
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
+        }*/
     }
 }
