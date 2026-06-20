@@ -20,6 +20,12 @@ public class PlayerCam : MonoBehaviour
         Cursor.visible = false;
     }
 
+    public void SetPlayer(Transform player, Transform cameraPos)
+    {
+        orientation = player;
+        this.cameraPos = cameraPos;
+    }
+
     private void Update()
     {
         float _mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;

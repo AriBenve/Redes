@@ -10,19 +10,19 @@ public class HealthBar : MonoBehaviour
     private float maxHealth;
     Player player;
 
-    private void Awake()
-    {
-        HPBar = GetComponent<Image>();
-        player = FindObjectOfType<Player>();
-        maxHealth = player.GetMaxLife();
-    }
+    //private void Awake()
+    //{
+    //    HPBar = GetComponent<Image>();
+    //    player = FindObjectOfType<Player>();
+    //    maxHealth = player.GetMaxLife();
+    //}
 
-    private void Update()
-    {
-        currentHealth = player.GetLife();
+    //private void Update()
+    //{
+    //    currentHealth = player.GetLife();
 
-        HPBar.fillAmount = currentHealth / maxHealth;
-    }
+    //    HPBar.fillAmount = currentHealth / maxHealth;
+    //}
 
 
 }

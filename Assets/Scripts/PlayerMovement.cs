@@ -39,6 +39,7 @@ public class PlayerMovement : NetworkBehaviour
     private RaycastHit _slopeHit;
     bool _exitingSlope;
 
+    public Transform cameraPos;
     public Transform orientation;
 
     float _horizontalInput;
@@ -54,18 +55,20 @@ public class PlayerMovement : NetworkBehaviour
 
     public bool dashing;
 
-    private void Start()
+    public override void Spawned()
     {
+        Debug.LogWarning("Spawned");
         _rb = GetComponent<NetworkRigidbody3D>();
         _rb.Rigidbody.freezeRotation = true;
         _readyToJump = true;
-    }
 
-    private void Spawn()
-    {
-        _rb = GetComponent<NetworkRigidbody3D>();
-        _rb.Rigidbody.freezeRotation = true;
-        _readyToJump = true;
+        if (Object.HasInputAuthority)
+        {
+            var playerCam = FindObjectOfType<PlayerCam>();
+            var moveCam = FindObjectOfType<MoveCamera>();
+            moveCam.SetPlayer(cameraPos);
+            playerCam.SetPlayer(cameraPos, orientation);
+        }
     }
 
     public override void FixedUpdateNetwork()
@@ -89,7 +92,9 @@ public class PlayerMovement : NetworkBehaviour
     {
         
         if(!GetInput(out NetworkInputData input)) return;
-
+        _verticalInput = input.movementInput.y;
+        _horizontalInput = input.movementInput.x;
+        
         if(input.buttons.IsSet(ButtonTypes.Jump) && _readyToJump && grounded)
         {
             _readyToJump = false;

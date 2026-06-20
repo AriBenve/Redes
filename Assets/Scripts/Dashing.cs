@@ -43,8 +43,16 @@ public class Dashing : NetworkBehaviour
     [Header("Input")]
     public KeyCode dashKey = KeyCode.E;
 
-    private void Start()
+    public override void Spawned()
     {
+        if(HasInputAuthority)
+            cam = FindObjectOfType<PlayerCam>();
+        
+        _fowardDashParticleSystem = GameObject.Find("ForwardDashParticle").GetComponent<ParticleSystem>();
+        _backwardsDashParticleSystem = GameObject.Find("BackwardDashParticle").GetComponent<ParticleSystem>();
+        _leftDashParticleSystem = GameObject.Find("LeftDashParticle").GetComponent<ParticleSystem>();
+        _rightDashParticleSystem = GameObject.Find("RightDashParticle").GetComponent<ParticleSystem>();
+
         rb = GetComponent<NetworkRigidbody3D>();
         pm = GetComponent<PlayerMovement>();
     }
@@ -53,7 +61,6 @@ public class Dashing : NetworkBehaviour
     {
         if (Input.GetKeyDown(dashKey))
         {
-            
             Dash();
         }
             

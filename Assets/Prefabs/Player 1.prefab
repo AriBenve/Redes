@@ -293,7 +293,7 @@ GameObject:
   - component: {fileID: 8850508871484162295}
   - component: {fileID: 6053561458948050578}
   - component: {fileID: 8310783215687503823}
-  - component: {fileID: 3233951953018646460}
+  - component: {fileID: 2074272975213141546}
   m_Layer: 8
   m_Name: Player 1
   m_TagString: Player
@@ -376,6 +376,7 @@ MonoBehaviour:
     m_Bits: 64
   grounded: 0
   MaxSlopeAngle: 60
+  cameraPos: {fileID: 3164110855472511180}
   orientation: {fileID: 3029481618026997142}
   state: 0
   dashing: 0
@@ -411,7 +412,7 @@ MonoBehaviour:
   allowAllDirections: 1
   disableGravity: 0
   resetVel: 1
-  dashCd: 5
+  dashCd: 3
   dashKey: 101
 --- !u!114 &8310783215687503823
 MonoBehaviour:
@@ -436,7 +437,7 @@ MonoBehaviour:
     Position: 0.01
     Rotation: 0.01
     Scale: 0.01
---- !u!114 &3233951953018646460
+--- !u!114 &2074272975213141546
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -445,15 +446,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 8645382941300025915}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ed77b35cbfc71a44a0a45452931f7bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SortKey: 1271541189
-  ObjectInterest: 1
-  Flags: 262145
-  NestedObjects: []
-  NetworkedBehaviours:
-  - {fileID: 8850508871484162295}
-  - {fileID: 6053561458948050578}
-  - {fileID: 8310783215687503823}
-  ForceRemoteRenderTimeframe: 0
+  jumpKey: 32
+  sprintKey: 304
+  dashKey: 101
+  isJumpPressed:
+    _value: 0
+  isFirePressed:
+    _value: 0
+  isRunPressed:
+    _value: 0
+  isDashPressed:
+    _value: 0
